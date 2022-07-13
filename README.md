@@ -14,3 +14,7 @@ mv patronistatus.service /etc/systemd/system/patroni-check.service
 systemctl daemon-reload
 
 systemctl enable --now patroni-check
+
+# HA Proxy Config # 
+
+Modify HA-Proxy Conf to include the teamplate content - The HA-Proxy should be looking for status from port 5555
