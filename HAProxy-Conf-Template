@@ -1,0 +1,8 @@
+backend mast-pgX_psql_readwrite
+        mode tcp
+        option tcpka
+        option httpchk OPTIONS /master
+        http-check expect status 200
+        server mast-pg1 mast-pg1:5432 maxconn 100 check agent-check agent-port 5555 inter 1s fall 2 rise 2 on-marked-down shutdown-sessions port 8008
+        server mast-pg2 mast-pg2:5432 maxconn 100 check agent-check agent-port 5555 inter 1s fall 2 rise 2 on-marked-down shutdown-sessions port 8008
+        server mast-pg3 mast-pg3:5432 maxconn 100 check agent-check agent-port 5555 inter 1s fall 2 rise 2 on-marked-down shutdown-sessions port 8008
