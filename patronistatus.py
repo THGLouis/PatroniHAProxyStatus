@@ -13,7 +13,7 @@ def cleanup(e):
 listen_port = 5555
 
 # Location of the Patroni API
-data_target = 'http://localhost:8008'
+data_target = 'http://<IP ADDRESS OF PATRONI>:8008'
 
 # Get the current role from Patroni's API
 def getstate():
